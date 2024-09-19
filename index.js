@@ -14,6 +14,12 @@ const model = genAI.getGenerativeModel({
   systemInstruction: "The tone should be very scientific and evidence based.",
 });
 
+app.get("/health", (req, res)=>{
+  return res.json({
+    message:"Application is running fine."
+  })
+})
+
 app.post("/chat", async (req, res) => {
   const { userMessage } = req.body;
   
